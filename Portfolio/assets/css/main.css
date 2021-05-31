@@ -189,9 +189,12 @@ select,
 textarea {
     color: #888;
     font-family: "Lato", sans-serif;
+    /*change font here*/
     font-size: 16pt;
     font-weight: 400;
     line-height: 1.75em;
+    text-align: justify;
+    /*I add a line here*/
 }
 
 a {
