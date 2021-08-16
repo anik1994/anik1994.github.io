@@ -7,7 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-            .grow {
+            body {
+            background-color: white;
+            font-family: Open sans, sans-serif;
+        }
+        
+        .grow {
             padding: 5px 5px 5px 5px;
             border-radius: 5px;
             height: 49px;
@@ -15,17 +20,20 @@
             margin: 5px 1% 5px 1%;
             float: left;
             position: relative;
-            transition: height 0.5s;
-            -webkit-transition: height 0.5s;
-            text-align: center;
+            transition: height 0.1s;
+            -webkit-transition: height 0.1s;
+            text-align: justify;
             overflow: hidden;
-            transition: 1.5s;
+            transition: 0.5s;
         }
         
         .grow:hover {
-            height: 145px;
+            height: 100%;
             /*width: 50vw;*/
         }
+        /*p {
+            font-size: 12px;
+        }*/
         /* Media queries - Responsive timeline on screens less than 600px wide */
         
         @media screen and (max-width: 600px) {
@@ -59,11 +67,31 @@
 </head>
 
 <body>
-    <div class="grow" style="background-color: rgb(206, 59, 59);">
+    <div class="grow" style="background-color: #fff;">
         <h2>Boro Rice Model for HAOR Region of Bangladesh Based on Modis NDVI Images</h2>
-        <p>Remote sensing satellite images have not been thoroughly studied in agricultural sector of Bangladesh.This study demonstrates a rice model using the vegetation index (VI) NDVI (Normalized Difference Vegetation Index) for predicting Boro rice areas
-            in the Haor region of Bangladesh. Existing rice models are not compatible for the latest version of MODIS data. A new rice model with a better range of NDVI (Normalized Difference Vegetation Index) threshold has been proposed for MODIS version
-            6 and 5 data which provides better results of Boro rice area calculation also when evaluated with ground truth area the error rate reduced from 8.85% to 7.58% on version 5 and from 27.70% to 4.98% on version 6 estimation respectively.</p>
+        <p><b><u>Authors:</u></b> Kazi A. Kalpoma, <b>Anik Chowdhury*</b>, Nowshin Nawar Arony*, Mehjabin Nowshin*, Junichi Kudoh</p>
+        <p><b><u>Published in:</u></b> <a href="https://ieeexplore.ieee.org/document/8899013">IGARSS 2019 - 2019 IEEE
+                International Geoscience and Remote Sensing Symposium</a></p>
+        <p><b><u>Abstract:</u></b>
+            <p>Remote sensing satellite images have not been thoroughly studied in agricultural sector of Bangladesh.This study demonstrates a rice model using the vegetation index (VI) NDVI (Normalized Difference Vegetation Index) for predicting Boro rice
+                areas in the Haor region of Bangladesh. Existing rice models are not compatible for the latest version of MODIS data. A new rice model with a better range of NDVI (Normalized Difference Vegetation Index) threshold has been proposed for
+                MODIS version 6 and 5 data which provides better results of Boro rice area calculation also when evaluated with ground truth area the error rate reduced from 8.85% to 7.58% on version 5 and from 27.70% to 4.98% on version 6 estimation
+                respectively.
+            </p>
+    </div>
+    <div class="grow" style="background-color: #fff;">
+        <h2>New Modis Vegetation Index for Boro Rice Model Using 3d Plot And K-NN: Bangladesh Haor Region Perspective
+        </h2>
+        <p><b><u>Authors:</u></b> Kazi A. Kalpoma, <b>Anik Chowdhury</b>, Nowshin Nawar Arony, Mehjabin Nowshin, Jun-ichi Kudoh</p>
+        <p><b><u>Published in:</u></b> <a href="https://ieeexplore.ieee.org/document/8898950">IGARSS 2019 - 2019 IEEE
+                International Geoscience and Remote Sensing Symposium</a></p>
+        <p><b><u>Abstract:</u></b>
+            <p>This paper demonstrates an approach to develop a prediction based model for forecasting Boro rice areas in the haor region of Bangladesh. Forecasting the rice areas can contribute in creating a centralized monitoring system for planning effi-cient
+                storage and proper utilization methods. This leads to the development of proposing a new vegetation index (VI). The approach considers a new vegetation index combining NDVI (Normalized Difference Vegetation Index), EVI2 (Enhanced Vegetation
+                Index 2) and OSAVI (Optimized Soil-Adjusted Vegetation Index) for latest version MODIS (version-6) data. The method will forecast total Boro rice areas at the beginning of the Boro season (Dec-Jan) which is more than 3 months earlier from
+                harvesting time without using any ground truth data. 3 Dimensional plotting method and k-Nearest Neighbor classifier have been used on only sowing period (Dec-Jan) data to predict Boro rice pixels. Our new VI has achieved an accuracy of
+                72%, recall 0.7020, precision 0.4183 and F 1 score 0.5175.
+            </p>
     </div>
 </body>
 
