@@ -1,0 +1,212 @@
+<!-- Design by foolishdeveloper.com -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Age Calculator</title>
+    <style media="screen">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #2782e3;
+            font-size: 15px;
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .container {
+            width: 520px;
+            height: auto;
+            margin: 100px auto;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+        
+        .base {
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            display: block;
+            float: none;
+        }
+        
+        .block {
+            width: 135px;
+            padding: 5px 20px;
+            margin-left: 20px;
+            display: inline-block;
+            float: left;
+        }
+        
+        .base h4 {
+            font-size: 26px;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: normal;
+            margin-top: 0px;
+            box-shadow: 0px 2px #bababa;
+            background: white;
+            font-size: 34px;
+            color: navy;
+        }
+        
+        .title {
+            font-size: 20px;
+            text-align: left;
+            font-family: sans-serif;
+            font-weight: normal;
+            line-height: 0.5;
+            letter-spacing: 0.5px;
+            word-spacing: 2.7px;
+            color: #1073d0;
+        }
+        
+        input[type=text] {
+            width: 140px;
+            margin: auto;
+            outline: none;
+            min-height: 50px;
+            border: 2px solid #1073d0;
+            padding: 12px;
+            background-color: #f7f7f7;
+            border-radius: 2px;
+            color: #1073d0;
+            font-size: 17px;
+        }
+        
+        input[type=text]:focus {
+            background-color: #ffffff;
+            border: 2px solid orange;
+            outline: none;
+        }
+        
+        input[type=button] {
+            width: 150px;
+            margin-left: 35%;
+            margin-top: 40px;
+            outline: none;
+            border: none;
+            border-radius: 2px;
+            background-color: #0761b6;
+            color: #ffffff;
+            padding: 14px 16px;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        input[type=button]:hover {
+            background-color: #003669;
+        }
+        
+        #age {
+            display: block;
+            margin: 10px;
+            margin-top: 35px;
+            padding: 10px;
+            padding-bottom: 20px;
+            overflow: hidden;
+            font-family: verdana;
+            font-size: 23px;
+            font-weight: normal;
+            line-height: 1.5;
+            word-spacing: 2.7px;
+            color: navy;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form>
+            <div class="base">
+                <div class="enter">
+                    <h4>Buy</h4>
+                </div>
+                <div class="block">
+                    <p class="title">Amount</p>
+                    <input type="text" name="Amount" id="amount" required="required" />
+                </div>
+                <div class="block">
+                    <p class="title">Price</p>
+                    <input type="text" name="price" id="price" required="required" />
+                </div>
+            </div>
+            <div class="base">
+                <div class="enter">
+                    <input type="button" name="buySubmit" value="Calculate" onclick="buyCost()" />
+                </div>
+            </div>
+            <div id="TotalPrice"></div>
+            <div id="Commission"></div>
+            <div id="NewPrice"></div>
+        </form>
+    </div>
+
+    <div class="container">
+        <form>
+            <div class="base">
+                <div class="enter">
+                    <h4>Sell</h4>
+                </div>
+                <div class="block">
+                    <p class="title">Amount</p>
+                    <input type="text" name="Amount" id="amount2" required="required" />
+                </div>
+                <div class="block">
+                    <p class="title">MarketPrice</p>
+                    <input type="text" name="price" id="price2" required="required" />
+                </div>
+                <div class="block">
+                    <p class="title">Buy</p>
+                    <input type="text" name="cost" id="cost" />
+                </div>
+            </div>
+            <div class="base">
+                <div class="enter">
+                    <input type="button" name="sellSubmit" value="Calculate" onclick="sellCost()" />
+                </div>
+            </div>
+            <div id="Commission2"></div>
+            <div id="TotalPrice2"></div>
+            <div id="Profit"></div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function buyCost() {
+            var amount = document.getElementById('amount').value;
+            var price = document.getElementById('price').value;
+
+            var totalPrice = amount * price;
+            var totalCommission = (totalPrice * 0.4) / 100;
+            var newPrice = (totalPrice + totalCommission) / amount;
+
+            document.getElementById('TotalPrice').innerHTML = 'Total Price: ' + totalPrice.toFixed(2);
+            document.getElementById('Commission').innerHTML = 'Commission: ' + totalCommission.toFixed(2);
+            document.getElementById('NewPrice').innerHTML = 'Per Share New Price: ' + newPrice.toFixed(2);
+        }
+
+        function sellCost() {
+            var amount = document.getElementById('amount2').value;
+            var price = document.getElementById('price2').value;
+            var buyCost = document.getElementById('cost').value;
+
+            var totalPrice = amount * price;
+            var totalCommission = (totalPrice * 0.4) / 100;
+            var priceAfterCom = totalPrice - totalCommission;
+            var newPrice = priceAfterCom / amount;
+            var profit = priceAfterCom - (buyCost * amount);
+
+            document.getElementById('Commission2').innerHTML = 'Commision: ' + totalCommission.toFixed(2);
+            document.getElementById('TotalPrice2').innerHTML = 'Total Price After Commission: ' + priceAfterCom.toFixed(2);
+            document.getElementById('Profit').innerHTML = 'Profit After Commission: ' + profit.toFixed(2);
+        }
+    </script>
+
+    <body>
+        <html>
