@@ -2000,12 +2000,12 @@ input[type="radio"]+label:before {
     width: 100%;
 }
 
-.image.avatar {
+.image.avatar1 {
     border-radius: 100%;
     overflow: hidden;
 }
 
-.image.avatar img {
+.image.avatar1 img {
     border-radius: 100%;
     display: block;
     width: 100%;
@@ -2564,7 +2564,7 @@ input[type="button"]:disabled,
     padding: 3em;
 }
 
-#header>header .avatar {
+#header>header .avatar1 {
     display: block;
     margin: 0 auto 2.25em auto;
     width: 8em;
@@ -2981,7 +2981,7 @@ input[type="button"]:disabled,
     #header>header {
         padding: 2em;
     }
-    #header>header .avatar {
+    #header>header .avatar1 {
         margin: 0 auto 1.6875em auto;
         width: 6em;
     }
